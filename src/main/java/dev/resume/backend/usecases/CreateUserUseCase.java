@@ -2,17 +2,17 @@ package dev.resume.backend.usecases;
 
 import dev.resume.backend.entities.UserEntity;
 import dev.resume.backend.repositories.UserRepository;
-import org.springframework.security.crypto.password.PasswordEncoder;
+//import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 @Service
 public class CreateUserUseCase {
     private final UserRepository userRepository;
-    private final PasswordEncoder passwordEncoder;
+//    private final PasswordEncoder passwordEncoder;
 
-    public CreateUserUseCase(UserRepository userRepository, PasswordEncoder passwordEncoder) {
+    public CreateUserUseCase(UserRepository userRepository) {
         this.userRepository = userRepository;
-        this.passwordEncoder = passwordEncoder;
+//        this.passwordEncoder = passwordEncoder;
     }
 
     public UserEntity execute(UserEntity userEntity){
@@ -22,8 +22,8 @@ public class CreateUserUseCase {
             throw new RuntimeException("User already exists");
         }
 
-        var password = passwordEncoder.encode(userEntity.getPassword());
-        userEntity.setPassword(password);
+//        var password = passwordEncoder.encode(userEntity.getPassword());
+//        userEntity.setPassword(password);
 
         return this.userRepository.save(userEntity);
     }
