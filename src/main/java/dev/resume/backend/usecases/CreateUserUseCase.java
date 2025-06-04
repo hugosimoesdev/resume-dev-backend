@@ -1,6 +1,7 @@
 package dev.resume.backend.usecases;
 
 import dev.resume.backend.entities.UserEntity;
+import dev.resume.backend.exceptions.UserAlreadyExistException;
 import dev.resume.backend.repositories.UserRepository;
 //import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -19,7 +20,7 @@ public class CreateUserUseCase {
         var user = this.userRepository.findByEmail(userEntity.getEmail());
 
         if(user != null){
-            throw new RuntimeException("User already exists");
+            throw new UserAlreadyExistException();
         }
 
 //        var password = passwordEncoder.encode(userEntity.getPassword());

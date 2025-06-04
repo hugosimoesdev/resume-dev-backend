@@ -3,6 +3,7 @@ package dev.resume.backend.controllers;
 import dev.resume.backend.entities.UserEntity;
 import dev.resume.backend.usecases.CreateUserUseCase;
 import jakarta.validation.Valid;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -22,7 +23,7 @@ public class UserController {
     public ResponseEntity<Object> create(@Valid @RequestBody UserEntity userEntity){
         try {
             var result = this.createUserUseCase.execute(userEntity);
-            return ResponseEntity.ok(result);
+            return ResponseEntity.status(HttpStatus.CREATED).body(result);
         } catch (Exception e) {
             return ResponseEntity.badRequest().body(e.getMessage());
         }
