@@ -13,13 +13,13 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/user")
 public class UserController {
-    private CreateUserUseCase createUserUseCase;
+    private final CreateUserUseCase createUserUseCase;
 
     public UserController(CreateUserUseCase createUserUseCase) {
         this.createUserUseCase = createUserUseCase;
     }
 
-    @PostMapping("/")
+    @PostMapping()
     public ResponseEntity<Object> create(@Valid @RequestBody UserEntity userEntity){
         try {
             var result = this.createUserUseCase.execute(userEntity);
