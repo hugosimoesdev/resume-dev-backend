@@ -1,7 +1,7 @@
-package dev.resume.backend.controllers;
+package dev.resume.backend.controller;
 
-import dev.resume.backend.dto.AuthUserDTO;
-import dev.resume.backend.usecases.AuthUserUseCase;
+import dev.resume.backend.domain.dto.AuthUserDTO;
+import dev.resume.backend.service.AuthUserUseCase;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;

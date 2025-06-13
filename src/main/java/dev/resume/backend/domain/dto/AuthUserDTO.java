@@ -1,4 +1,4 @@
-package dev.resume.backend.dto;
+package dev.resume.backend.domain.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

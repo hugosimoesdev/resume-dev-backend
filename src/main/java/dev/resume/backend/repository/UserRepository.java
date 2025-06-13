@@ -1,6 +1,6 @@
-package dev.resume.backend.repositories;
+package dev.resume.backend.repository;
 
-import dev.resume.backend.entities.UserEntity;
+import dev.resume.backend.domain.entity.UserEntity;
 import jakarta.validation.constraints.NotNull;
 import org.springframework.data.jpa.repository.JpaRepository;
 

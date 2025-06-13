@@ -1,4 +1,4 @@
-package dev.resume.backend.entities;
+package dev.resume.backend.domain.entity;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;

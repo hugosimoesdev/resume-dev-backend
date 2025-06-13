@@ -1,7 +1,7 @@
-package dev.resume.backend.controllers;
+package dev.resume.backend.controller;
 
-import dev.resume.backend.entities.UserEntity;
-import dev.resume.backend.usecases.CreateUserUseCase;
+import dev.resume.backend.domain.entity.UserEntity;
+import dev.resume.backend.service.CreateUserUseCase;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

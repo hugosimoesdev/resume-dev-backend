@@ -1,8 +1,8 @@
-package dev.resume.backend.usecases;
+package dev.resume.backend.service;
 
-import dev.resume.backend.entities.UserEntity;
+import dev.resume.backend.domain.entity.UserEntity;
 import dev.resume.backend.exceptions.UserAlreadyExistException;
-import dev.resume.backend.repositories.UserRepository;
+import dev.resume.backend.repository.UserRepository;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
